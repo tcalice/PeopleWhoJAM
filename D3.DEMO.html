@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+  	<title> People Who JAM - D3 Flare iBloc</title>
+  <!-- REFERENCE SCRIPT LIBRARIES (<a href="http://peoplewhojam.wikispaces.com/datahttp://peoplewhojam.wikispaces.com/data"></a>)
+  		force-collapsible.html
+		style.css
+		d3/d3.layout.js
+		d3/d3.js  src="d3js.org/d3.v3.min.js"
+		d3/d3.geom.js
+
+  -->
+  	<script src="../../Users/tcalice/Documents/GitHub/d3/d3.min.js"></script>
+  
+  </head>
+  
+  
+  <body>
+
+
+	  <script type="text/javascript"> 
+	   
+		//	MAKE FILE: PeopleWhoJAM.D3.Flare.js	
+		//  <p>Research Spike: D3 Flare iBloc peoplewhojam.wikispaces.com/data </p>
+		// DOCUMENT: Research Spike: D3 Flare iBloc peoplewhojam.wikispaces.com/data
+		// OUTLINE: ELEMENTS, , 
+		// SHAPES: SHAPES, SHAPES(DATA01), SHAPES(DATA02), SHAPES(DATA02)_NEW,, SHAPES(DATA03), SHAPES(DATA04), SHAPES.TRANSITION01,SHAPES.TRANSITION02
+		// CONSOLE: CONSOLE,CONSOLE(DATA05)
+		// DATA:DATA01,DATA02,DATA03,DATA04,DATA05
+		///////////////////////////////
+		//HOSTED DATA: DATA06
+
+//////////DATA06
+		//  HOST FILES:   DOWNLOAD TO SAME DIRECTORY AS DEMO PAGE
+		//	HOST FILE01:  https://raw.githubusercontent.com/tcalice/PeopleWhoJAM/master/mydata.json
+		//	HOST FILE02:  https://raw.githubusercontent.com/tcalice/PeopleWhoJAM/master/mydata.csv
+
+			d3.json()
+					
+//////////
+
+				//D3 SHAPES
+			//D3: SVG
+				var canvas = d3.select("body")
+					.append("svg")
+					.attr("width",500)
+					.attr("height",500);
+			//D3: Circle	
+				var circle = canvas.append("circle")
+					.attr("cx",250)
+					.attr("cy",250)
+					.attr("r",50)
+					.attr("fill","red");
+			//D3 Rectangle
+				var rect = canvas.append("rect")
+					.attr("width",100)
+					.attr("height",50);
+			//D3 Line
+				var line = canvas.append("line")
+					.attr("x1",0)
+					.attr("y1",100)
+					.attr("x2",400)
+					.attr("y2",400)
+					.attr("stroke","green")
+					.attr("stroke-width",10);
+
+		
+		
+			
+	  </script>
+
+
+  
+  	
+  </body>
+</html>
