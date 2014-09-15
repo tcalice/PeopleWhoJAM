@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+  	<title> People Who JAM - D3 Flare iBloc</title>
+  <!-- REFERENCE SCRIPT LIBRARIES (<a href="http://peoplewhojam.wikispaces.com/datahttp://peoplewhojam.wikispaces.com/data"></a>)
+  		force-collapsible.html
+		style.css
+		d3/d3.layout.js
+		d3/d3.js  src="d3js.org/d3.v3.min.js"
+		d3/d3.geom.js
+
+  -->
+
+  <!-- 
+  ENVIRONMENT(HOSTED)
+  	<script src="d3.js"></script>
+  --->
+  
+   <!--ENVIRONMENT(LOCAL) -->
+    	<script src="http://d3js.org/d3.v3.min.js"></script>
+
+  
+  </head>
+  
+  
+  <body>
+	<p> Go To <a href="http://localhost/D3.DEMO.htm"> Local IIS </a></p>
+
+	  <script type="text/javascript"> 
+	   
+		//	MAKE FILE: PeopleWhoJAM.D3.Flare.js	
+		//  <p>Research Spike: D3 Flare iBloc peoplewhojam.wikispaces.com/data </p>
+		// DOCUMENT: Research Spike: D3 Flare iBloc peoplewhojam.wikispaces.com/data
+		// OUTLINE: ELEMENTS, , 
+		// SHAPES: SHAPES, SHAPES(DATA01), SHAPES(DATA02), SHAPES(DATA02)_NEW,, SHAPES(DATA03), SHAPES(DATA04), SHAPES.TRANSITION01,SHAPES.TRANSITION02
+		// CONSOLE: CONSOLE,CONSOLE(DATA05)
+		// DATA:DATA01,DATA02,DATA03,DATA04,DATA05
+		///////////////////////////////
+
+
+//////////CONVERTED DATA06 to Local Array (dataArray)
+		//  LOCAL HOST:   http://localhost		
+		//  DEMO FILE(D3.DEMO.htm):   http://localhost/D3.DEMO.htm (source:   )
+		//	HOST FILE01 (mydata.json):  (source: https://raw.githubusercontent.com/tcalice/PeopleWhoJAM/master/mydata.json)
+		//			mydata.json
+		//			 	[
+		//			 	 	{"name": "Maria", "age":30},
+		//			    	{"name": "Fred", "age":50},
+		//			    	{"name": "Francis", "age":12}  
+		// 				]
+		//	HOST FILE02 (mydata.csv):  (source: https://raw.githubusercontent.com/tcalice/PeopleWhoJAM/master/mydata.csv)
+
+			var dataArray = [{"name": "CODE", "age":5},
+					    	{"name": "some", "age":25},
+					    	{"name": "DATA", "age":50}  
+		 				];
+
+
+///////////////////////
+//HOSTING HEADER
+//			d3.json('mydata.json', function (data) { 
+//////////////////
+				
+				var canvas = d3.select("body").append("svg")
+					.attr("width",500)
+					.attr("height",500);
+
+////////////////
+// Rectangles' (append to canvas for each dataArray Object) 
+//				.width will equal "age" multiplied by 10
+//				.height will be 48
+//				.vertical positioning will be <Data Index> multiplied by 50
+//				.color will be blue
+
+
+								
+				canvas.selectAll("rect")
+					.data(dataArray)
+					.enter()
+						.append("rect")
+						.attr("width",function (d) {return d.age * 10;}) 
+						.attr("height",48)
+						.attr("y", function (d,i) {return i * 50;})
+						.attr("fill", "blue");
+////////////////
+// Texts' (append to canvas for each "data" record) 
+//				.color will be white
+//				.vertical positioning will be <Data Index> multiplied by 50 plus 24
+//				.text will be "name"
+						
+				canvas.selectAll("text")
+					.data(dataArray)
+					.enter()
+						.append("text")
+						.attr("fill","white")
+						.attr("y", function (d,i) {return i * 50 + 24; })
+						.text(function (d) { return d.name ;	});
+					
+///////////		
+//  Hosting Footer
+//		});
+////////////////////////			
+	  </script>
+
+
+  
+  	
+  </body>
+</html>
